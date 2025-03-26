@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Explainer</title>
+    <!-- Link to our CSS file (in the static folder) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Code Explainer</h1>
+        <p>Paste your code snippet below and get an explanation powered by Google Gemini.</p>
+
+        <textarea id="codeInput" placeholder="Paste your code here..."></textarea>
+        <button id="explainButton">Explain Code</button>
+
+        <div id="explanationResult" class="result-box">
+            <h2>Explanation:</h2>
+            <div id="loadingIndicator" style="display: none;">Loading...</div>
+            <pre id="explanationText"></pre> <!-- Use <pre> to preserve formatting -->
+        </div>
+    </div>
+
+    <!-- Link to our JavaScript file (MUST be after the elements it interacts with, or use defer) -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
